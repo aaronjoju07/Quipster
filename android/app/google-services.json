@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "854968345129",
+    "project_id": "quipster-628a0",
+    "storage_bucket": "quipster-628a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854968345129:android:eb347d0d79ddfffc703238",
+        "android_client_info": {
+          "package_name": "com.example.quipster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854968345129-4l4556i9j3nifqnhqede9flpvfhuefd3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_pLt9KuSmFJHqOhNA6VctPSo4UW_5gfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854968345129-4l4556i9j3nifqnhqede9flpvfhuefd3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "854968345129-vv85hoa1user6nc8mlvn878mpfm0t766.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quipster"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
