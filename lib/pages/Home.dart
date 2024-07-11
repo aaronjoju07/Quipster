@@ -12,7 +12,8 @@ class Home extends StatelessWidget {
     final User? user = auth.currentUser;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title:  Image.network("https://firebasestorage.googleapis.com/v0/b/quipster-628a0.appspot.com/o/appAssets%2FQLogo.png?alt=media&token=90132b3f-e04d-47ab-87c8-142925524ce2",height: 50,),
+        backgroundColor: Colors.black,
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
@@ -30,8 +31,26 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Welcome, ${user?.displayName ?? 'User'}!', style: TextStyle(color: Colors.white),),
-            Text('Email: ${user?.email ?? 'Not available'}'),
+            Card(
+              child: Row(
+                children: [
+                  // Profile pic
+                  Image.network(
+                    user?.photoURL ??
+                        'https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png',
+                    height: 40,
+                  ),
+                  // Rest Content
+                  Column(
+                    children: [
+                      Text('Name: ${user?.displayName ?? 'Not available'}'),
+                      Text('Email: ${user?.email ?? 'Not available'}'),
+                      const Text('Online'),
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
