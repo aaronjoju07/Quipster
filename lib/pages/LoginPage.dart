@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:quipster/pages/Home.dart';
+import 'package:quipster/components/BottomNavigationBar.dart';
+
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -14,7 +15,7 @@ class _LoginpageState extends State<Loginpage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   User? _user;
 
-@override
+  @override
   void initState() {
     super.initState();
     _auth.authStateChanges().listen((User? user) {
@@ -39,6 +40,14 @@ class _LoginpageState extends State<Loginpage> {
       setState(() {
         _user = userCredential.user;
       });
+
+      // Navigate to Bottomnavigationbar when user is authenticated
+      if (_user != null) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Bottomnavigationbar(auth: _auth)),
+        );
+      }
     } catch (error) {
       print("Error during Google Sign-In: $error");
     }
@@ -46,7 +55,7 @@ class _LoginpageState extends State<Loginpage> {
   
   @override
   Widget build(BuildContext context) {
-    return _user != null ? Home(auth: _auth) : Scaffold(
+    return _user != null ? Bottomnavigationbar(auth: _auth) : Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +78,6 @@ class _LoginpageState extends State<Loginpage> {
             ElevatedButton(
               onPressed: () {
                 _handleGoogleSignin();
-                // Implement Google Sign-In logic here
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(

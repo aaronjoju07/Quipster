@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:quipster/pages/LoginPage.dart';
 
 class Home extends StatelessWidget {
   final FirebaseAuth auth;
   
-  const Home({super.key, required this.auth});
+  const Home({Key? key, required this.auth}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +18,19 @@ class Home extends StatelessWidget {
             icon: const Icon(Icons.logout),
             onPressed: () async {
               await auth.signOut();
-              Navigator.of(context).pushReplacementNamed('/login');
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Loginpage()),
+              );
             },
           ),
         ],
       ),
-      body: Center(  
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Welcome, ${user?.displayName ?? 'User'}!'),
+            Text('Welcome, ${user?.displayName ?? 'User'}!', style: TextStyle(color: Colors.white),),
             Text('Email: ${user?.email ?? 'Not available'}'),
           ],
         ),

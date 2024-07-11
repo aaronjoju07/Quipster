@@ -11,10 +11,11 @@ dependencies:
   firebase_core: ^3.1.1
   flutter:
     sdk: flutter
+  get: ^4.6.6
   google_sign_in: ^6.2.1
 
 assets:
-- assets/images/FullLogo.png
+  - assets/images/FullLogo.png
 
 dev_dependencies:
   flutter_test:
