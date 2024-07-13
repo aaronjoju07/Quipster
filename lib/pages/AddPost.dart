@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:quipster/components/BottomNavigationBar.dart';
-import 'package:quipster/pages/Home.dart';
 
 class AddPost extends StatefulWidget {
   final FirebaseAuth auth;
@@ -23,8 +21,8 @@ class _AddPostState extends State<AddPost> {
           ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                backgroundColor: WidgetStateProperty.all<Color>(Colors.blue),
+                foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
               ),
               child: const Text('Post'))
         ],
