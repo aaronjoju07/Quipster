@@ -1,0 +1,58 @@
+final List<Map<String, String>> posts = [
+  {
+    'userProfileImageUrl': 'https://example.com/user1.jpg',
+    'userName': 'John Doe',
+    'userUid': 'user1',
+    'userEmail': 'john.doe@example.com',
+    'userPost': "🏆 Just finished a marathon and feeling accomplished! 🚀 #MarathonFinisher #RunningGoals",
+  },
+  {
+    'userProfileImageUrl': 'https://example.com/user2.jpg',
+    'userName': 'Jane Smith',
+    'userUid': 'user2',
+    'userEmail': 'jane.smith@example.com',
+    'userPost': "🍕 Tried a new pizza place today and it was amazing! Highly recommend it to anyone in town. 🍕 #Foodie #PizzaLover",
+  },
+  {
+    'userProfileImageUrl': 'https://example.com/user3.jpg',
+    'userName': 'Alice Johnson',
+    'userUid': 'user3',
+    'userEmail': 'alice.johnson@example.com',
+    'userPost': "🌍 Just got back from an incredible trip to Japan. The culture and food were absolutely incredible. 🇯🇵 #TravelDiaries #JapanAdventure",
+  },
+  {
+    'userProfileImageUrl': 'https://example.com/user4.jpg',
+    'userName': 'Bob Brown',
+    'userUid': 'user4',
+    'userEmail': 'bob.brown@example.com',
+    'userPost': "🎨 Working on a new art project. Excited to share the final piece soon! 🎨 #ArtLife #CreativeJourney",
+  },
+  {
+    'userProfileImageUrl': 'https://example.com/user5.jpg',
+    'userName': 'Emily Davis',
+    'userUid': 'user5',
+    'userEmail': 'emily.davis@example.com',
+    'userPost': "🎬 Just watched the latest blockbuster movie. What a thrilling experience! 🎥 #MovieNight #Blockbuster",
+  },
+  {
+    'userProfileImageUrl': 'https://example.com/user6.jpg',
+    'userName': 'Michael Lee',
+    'userUid': 'user6',
+    'userEmail': 'michael.lee@example.com',
+    'userPost': "📚 Just finished reading a fantastic book. Can't wait to start the next one! 📖 #Bookworm #ReadingGoals",
+  },
+  {
+    'userProfileImageUrl': 'https://example.com/user7.jpg',
+    'userName': 'Sarah Wilson',
+    'userUid': 'user7',
+    'userEmail': 'sarah.wilson@example.com',
+    'userPost': "🌸 Enjoying a relaxing day at the spa. Sometimes you just need to unwind and pamper yourself. 🌿 #SelfCare #SpaDay",
+  },
+  {
+    'userProfileImageUrl': 'https://example.com/user8.jpg',
+    'userName': 'David Martinez',
+    'userUid': 'user8',
+    'userEmail': 'david.martinez@example.com',
+    'userPost': "🎵 Just discovered a new music album that's on repeat! The beats are incredible. 🎶 #MusicLover #AlbumRecommendation",
+  },
+];

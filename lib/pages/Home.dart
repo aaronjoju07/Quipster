@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:quipster/components/FeedCard.dart';
 import 'package:quipster/pages/AddPost.dart';
 import 'package:quipster/pages/LoginPage.dart';
+import 'package:quipster/data/list_data.dart'; // Import the post data
 
 class Home extends StatelessWidget {
   final FirebaseAuth auth;
@@ -12,7 +13,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final User? user = auth.currentUser;
-    print(user?.photoURL.runtimeType);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -37,28 +38,37 @@ class Home extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 0.17,
+            // height: 0.17 * MediaQuery.of(context).size.height,
             child: Container(
               color: Colors.white,
             ),
           ),
-          FeedCard(
-            userProfileImageUrl: user?.photoURL,
-            userName: user?.displayName,
-            userUid: user?.uid,
-            userEmail: user?.email,
-            islike: true,
-            userPost:
-                "🏏🇮🇳 What a thrilling victory! India reigns supreme in the T20 World Cup! 🎉🙌 #TeamIndia's incredible gameplay and sheer determination have made the nation proud! Let's celebrate this historic win together! 🏆🔥 #T20WorldCup #CricketFever",
+          Expanded(
+            child: ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, index) {
+                final post = posts[index];
+                var like  = post['islike'] as bool?;
+                return FeedCard(
+                  userProfileImageUrl: post['userProfileImageUrl'],
+                  userName: post['userName'],
+                  userUid: post['userUid'],
+                  userEmail: post['userEmail'],
+                  islike: like, 
+                  userPost: post['userPost'],
+                );
+              },
+            ),
           ),
-          SizedBox(height: 0.31, child: Container(color: Colors.white)),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => AddPost(auth: auth, photoURL:"${user?.photoURL}")),
+            MaterialPageRoute(
+              builder: (context) => AddPost(auth: auth, photoURL: user?.photoURL ?? ''),
+            ),
           );
         },
         child: Icon(Icons.add),

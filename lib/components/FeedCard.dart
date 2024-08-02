@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class FeedCard extends StatefulWidget {
   final String? userProfileImageUrl;
@@ -6,7 +7,7 @@ class FeedCard extends StatefulWidget {
   final String? userUid;
   final String? userEmail;
   final String? userPost;
-  final bool? islike; // Assuming this is used to determine if liked or not
+  final bool? islike; 
 
   const FeedCard({
     Key? key,
@@ -47,8 +48,7 @@ class _FeedCardState extends State<FeedCard> {
                 backgroundImage: NetworkImage(widget.userProfileImageUrl ??
                     'https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png'),
               ),
-              const SizedBox(width: 15),
-              // Rest Content
+
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,12 +60,12 @@ class _FeedCardState extends State<FeedCard> {
                     ),
                     Text(
                       '@${widget.userEmail ?? 'Email not available'}',
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       widget.userPost ?? '',
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                     const SizedBox(height: 8),
                     Row(
@@ -88,8 +88,8 @@ class _FeedCardState extends State<FeedCard> {
                           onPressed: () {
                             // Handle comment button press
                           },
-                          icon: Icon(
-                            Icons.comment_outlined,
+                          icon: const Icon(
+                             Icons.comment_outlined,
                             color: Colors.white,
                           ),
                         ),
@@ -97,7 +97,7 @@ class _FeedCardState extends State<FeedCard> {
                           onPressed: () {
                             // Handle share button press
                           },
-                          icon: Icon(
+                          icon:const Icon(
                             Icons.share_outlined,
                             color: Colors.white,
                           ),

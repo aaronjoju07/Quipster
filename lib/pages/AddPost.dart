@@ -50,7 +50,7 @@ class _AddPostState extends State<AddPost> {
             const SizedBox(width: 12,),
             const Expanded(
               child:  TextField(
-                decoration: InputDecoration(hintText: "What's happening..??",border: InputBorder.none,hintStyle: TextStyle(color: Color.fromARGB(255, 134, 134, 134))),
+                decoration: InputDecoration(hintText: "What's happening..??",fillColor: Colors.white,border: InputBorder.none,hintStyle: TextStyle(color: Color.fromARGB(255, 134, 134, 134))),maxLines: null,
               ),
             ),
           ],

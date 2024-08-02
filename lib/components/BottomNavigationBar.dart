@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quipster/pages/Home.dart';
+import 'package:quipster/pages/Profile.dart';
 
 
 class Bottomnavigationbar extends StatelessWidget {
@@ -45,7 +46,7 @@ class NavigationController extends GetxController {
       Home(auth: auth), 
       Container(color: Colors.blue),
       Container(color: Colors.blueAccent),
-      Container(color: Colors.cyan),
+      ProfilePage(),
     ];
   }
 }
