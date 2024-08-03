@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quipster/pages/Home.dart';
 import 'package:quipster/pages/Profile.dart';
+import 'package:quipster/pages/Search.dart';
 
 
 class Bottomnavigationbar extends StatelessWidget {
@@ -44,7 +45,7 @@ class NavigationController extends GetxController {
   NavigationController({required this.auth}) {
     screens = [
       Home(auth: auth), 
-      Container(color: Colors.blue),
+      SearchPage(),
       Container(color: Colors.blueAccent),
       ProfilePage(),
     ];
